@@ -19,8 +19,6 @@ This is a simple implementation of **vector-based document similarity search** i
 
 - Easily extensible to use higher-dimensional or pre-trained word embeddings (e.g., GloVe, Word2Vec,or BERT)
 
-- Clean, modular code with separation of logic into reusable components
-
 - Can be adapted for vector-based search tasks or sentence similarity
 
 ## Future Improvements
