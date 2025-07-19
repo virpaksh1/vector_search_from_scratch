@@ -1,19 +1,25 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
 #include "vector_search.h"
 
 int main() {
-    std::vector<std::string> documents = {
-        "Machine learning is powerful",
-        "Artificial intelligence advances rapidly",
-        "Deep learning transforms technology",
-        "Data science drives innovation",
-        "Neural networks power AI",
-        "Artificial Intelligence (AI) is a broad field focused on creating machines that can perform tasks requiring human-like intelligence",
-        "Machine Learning (ML) is a subset of AI that enables systems to learn from data and improve over time without being explicitly programmed",
-        "Deep Learning, a branch of ML, uses neural networks with many layers to model complex patterns in large datasets",
-        "AI applications include speech recognition, recommendation systems, and autonomous vehicles",
-        "As data and computing power grow, AI and deep learning are becoming increasingly powerful and widely used"
-    };
+
+    std::vector<std::string> documents;
+    std::ifstream file("../documents.txt");
+    if (!file) {
+        std::cerr << "Error opening documents.txt\n";
+        return 1;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        if (!line.empty()) {
+            documents.push_back(line);
+        }
+    }
+    file.close();
 
     EmbeddingMap word_embeddings = {
         {"machine", {0.8, 0.2}},
