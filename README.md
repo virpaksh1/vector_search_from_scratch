@@ -27,8 +27,6 @@ This is a simple implementation of **vector-based document similarity search** i
 
 - Add support for more dimensions
 
-- Use file I/O for document input
-
 ## License
 
 This project is licensed under the **Apache License 2.0**
